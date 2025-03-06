@@ -3,7 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCondition : MonoBehaviour
+public interface IDamgealbe
+{
+    void TakePhysicalDamage(int damageAmount);
+}
+
+public class PlayerCondition : MonoBehaviour, IDamgealbe
 {
     public UICondition uiCondition;
 
@@ -16,7 +21,7 @@ public class PlayerCondition : MonoBehaviour
     {
         stamina.Add(stamina.passiveValue * Time.deltaTime);
 
-        if (health.curValue < 0f)
+        if (health.curValue == 0f)
         {
             Die();
         }
@@ -31,9 +36,20 @@ public class PlayerCondition : MonoBehaviour
     // 플레이어 사망 시 게임 종료
     public void Die()
     {
-        Application.Quit();
+        GameEnd();
     }
 
+    public void GameEnd()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
+
+    // 스테미나 사용
     public bool UseStamina(float amount)
     {
         if(stamina.curValue - amount < 0f)
@@ -43,5 +59,12 @@ public class PlayerCondition : MonoBehaviour
 
         stamina.Decrease(amount);
         return true;
+    }
+
+    // 데미지 받을시 행동
+    public void TakePhysicalDamage(int damageAmount)
+    {
+        health.Decrease(damageAmount);
+        OnTakeDamage?.Invoke();
     }
 }

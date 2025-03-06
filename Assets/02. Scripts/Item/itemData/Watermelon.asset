@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a735bd4fcf94254b91e7bc7dc65a034, type: 3}
+  m_Name: Watermelon
+  m_EditorClassIdentifier: 
+  displayName: "\uC218\uBC15"
+  description: "\uB2F9\uB3C4 \uB192\uC740 \uC218\uBC15\uC774\uB2E4. \uBA39\uC73C\uBA74
+    \uC2A4\uD14C\uBBF8\uB098\uAC00 \uB9CE\uC774 \uD68C\uBCF5\uB41C\uB2E4."
+  type: 0
+  icon: {fileID: 0}
+  consumables: []

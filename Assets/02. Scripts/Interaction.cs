@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
-    public float checkRate = 0.05f;         // °¨Áö ¹üÀ§
+    public float checkRate = 0.05f;         // ê°ì§€ ë²”ìœ„
     private float lastCheckTime;
     public float maxCheckDistance;
     public LayerMask layerMask;             // 

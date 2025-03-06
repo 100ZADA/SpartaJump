@@ -23,9 +23,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
+    private PlayerCondition playerCondition;        // 플레이어 상태
+
+    public float jumpStaminaCost = 10f;             // 점프 시 스테미나 소모
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        playerCondition = GetComponent<PlayerCondition>();
     }
 
     void Start()
@@ -68,7 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())       // 플레이어가 땅 위에 있을시 점프 가능
         {
-            _rigidbody.AddForce(Vector3.up * jumpPoewr, ForceMode.Impulse);
+            // 스테미나가 충분하면 점프
+            if (playerCondition.UseStamina(jumpStaminaCost))
+            {
+                _rigidbody.AddForce(Vector3.up * jumpPoewr, ForceMode.Impulse);
+            }
         }
     }
 

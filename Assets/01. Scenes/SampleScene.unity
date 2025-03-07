@@ -1894,10 +1894,6 @@ MonoBehaviour:
     m_ActionId: c5d20f86-adb4-4acf-8a2a-a4c0c1b9fc4f
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 79133f58-8df2-48ea-8688-1f4040f16c94
-    m_ActionName: Player/Inventory[/Keyboard/tab]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1866636634}
         m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
@@ -1955,7 +1951,7 @@ MonoBehaviour:
   minXLook: -80
   maxXLook: 80
   lookSensitivity: 0.2
-  jumpStaminaCost: 15
+  jumpStaminaCost: 20
   canLook: 1
 --- !u!114 &1866636631
 MonoBehaviour:

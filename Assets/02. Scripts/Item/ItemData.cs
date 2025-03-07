@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ItemType
@@ -10,7 +11,7 @@ public enum ItemType
 public enum ConsumableType
 {
     Health,
-    stamina
+    Stamina
 }
 
 [System.Serializable]

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Cherry
   m_EditorClassIdentifier: 
   displayName: "\uCCB4\uB9AC"
-  description: "\uC81C\uCCA0\uB3C4 \uC544\uB2CC \uCCB4\uB9AC\uB2E4. \uBA39\uC73C\uBA74
-    \uC2A4\uD0DC\uBBF8\uB098\uAC00 \uC870\uAE08 \uD68C\uBCF5\uB41C\uB2E4."
+  info: "\uC81C\uCCA0\uC774 \uC544\uB2CC \uCCB4\uB9AC\uB2E4. \uBA39\uC73C\uBA74 \uC2A4\uD0DC\uBBF8\uB098\uAC00
+    \uC870\uAE08 \uD68C\uBCF5\uB41C\uB2E4."
   type: 0
   icon: {fileID: 0}
-  consumables: []
+  consumables:
+  - type: 1
+    value: 5

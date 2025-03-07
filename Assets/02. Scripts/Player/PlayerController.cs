@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public float maxXLook;              // 카메라 범위 최대값
     private float camCurXRot;
     public float lookSensitivity;       // 카메라 민감도
-    public bool canLook = true;
 
     private Vector2 mouseDelta;         // 마우스 변화 방법
 
@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     private PlayerCondition playerCondition;        // 플레이어 상태
 
     public float jumpStaminaCost = 10f;             // 점프 시 스테미나 소모
+
+    public bool canLook = true;
+    
+    public Action inventory;
 
     private void Awake()
     {
@@ -123,9 +127,20 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    // 마우스 커서 상태 유무
-    public void ToggleCursor(bool toggle)
+    // 인벤토리 버튼 사용
+    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
     {
+        if(callbackContext.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+
+    // 마우스 커서 상태 유무
+    public void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }

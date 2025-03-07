@@ -33,6 +33,12 @@ public class PlayerCondition : MonoBehaviour, IDamgealbe
         health.Add(amount);
     }
 
+    // 스테미나 회복
+    public void Statmina(float amount)
+    {
+        stamina.Add(amount);
+    }
+
     // 플레이어 사망 시 게임 종료
     public void Die()
     {

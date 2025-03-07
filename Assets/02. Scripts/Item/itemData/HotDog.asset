@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: HotDog
   m_EditorClassIdentifier: 
   displayName: "\uD56B\uB3C4\uADF8"
-  description: "\uCF00\uCCA9\uC774 \uC62C\uB77C\uAC04 \uD56B\uB3C4\uADF8\uB2E4. \uBA39\uC73C\uBA74
-    \uCCB4\uB825\uC774 \uD68C\uBCF5\uB41C\uB2E4."
+  info: "\uB9DB\uC788\uB294 \uD56B\uB3C4\uADF8\uB2E4. \uCCB4\uB825\uC774 \uD68C\uBCF5\uB41C\uB2E4."
   type: 0
   icon: {fileID: 0}
-  consumables: []
+  consumables:
+  - type: 0
+    value: 10

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Cheese
   m_EditorClassIdentifier: 
   displayName: "\uCE58\uC988"
-  description: "\uACE0\uC18C\uD55C \uCE58\uC988\uB2E4. \uBA39\uC73C\uBA74 \uCCB4\uB825\uC774
-    \uC870\uAE08 \uD68C\uBCF5\uB41C\uB2E4."
+  info: "\uACE0\uC18C\uD55C \uCE58\uC988\uB2E4. \uBA39\uC73C\uBA74 \uCCB4\uB825\uC744
+    \uC870\uAE08 \uD68C\uBCF5\uD55C\uB2E4."
   type: 0
   icon: {fileID: 0}
-  consumables: []
+  consumables:
+  - type: 0
+    value: 5

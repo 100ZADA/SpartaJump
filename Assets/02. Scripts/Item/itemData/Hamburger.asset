@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Hamburger
   m_EditorClassIdentifier: 
   displayName: "\uD584\uBC84\uAC70"
-  description: "\uCE58\uC988\uBC84\uAC70\uB2E4. \uBA39\uC73C\uBA74 \uCCB4\uB825 \uB9CE\uC774
-    \uD68C\uBCF5\uB41C\uB2E4."
+  info: "\uCE58\uC988 \uBC84\uAC70\uB2E4. \uBA39\uC73C\uBA74 \uCCB4\uB825\uC774 \uB9CE\uC774
+    \uD68C\uBCF5\uB418\uC9C0\uB9CC \uC2A4\uD0DC\uBBF8\uB098\uAC00 \uAC10\uC18C\uB41C\uB2E4."
   type: 0
   icon: {fileID: 0}
-  consumables: []
+  consumables:
+  - type: 0
+    value: 15
+  - type: 1
+    value: -7

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;             // 플레이어의 이동 속도
     private Vector2 curMovementInput;   // 플레이어의 입력 값
-    public float jumpPoewr;             // 플레이어의 점프력
+    public float jumpPower;             // 플레이어의 점프력
     public LayerMask groundLayerMask;   // 레이어 정보
 
     [Header("Look")]
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
             // 스테미나가 충분하면 점프
             if (playerCondition.UseStamina(jumpStaminaCost))
             {
-                _rigidbody.AddForce(Vector3.up * jumpPoewr, ForceMode.Impulse);
+                _rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             }
         }
     }

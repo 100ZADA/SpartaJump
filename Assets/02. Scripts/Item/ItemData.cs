@@ -11,7 +11,9 @@ public enum ItemType
 public enum ConsumableType
 {
     Health,
-    Stamina
+    Stamina,
+    Jump,
+    Speed
 }
 
 [System.Serializable]
@@ -28,7 +30,6 @@ public class ItemData : ScriptableObject
     public string displayName;
     public string info;
     public ItemType type;
-    public Sprite icon;
 
     [Header("Consumable")]
     public ItemDataConsumable[] consumables;

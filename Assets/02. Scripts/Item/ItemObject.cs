@@ -24,7 +24,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
         if(playerCondition != null && data.type == ItemType.Consumable)
         {
-            foreach(ItemDataConsumable consumable in data.consumables)      // 아이템효과가 체력, 스태미나 회복이 둘다 잇을 경우 순차적으로 적용
+            foreach(ItemDataConsumable consumable in data.consumables)      // 아이템효과가 여러개인 경우 순차적으로 적용
             {
                 switch (consumable.type)
                 {
@@ -33,6 +33,12 @@ public class ItemObject : MonoBehaviour, IInteractable
                         break;
                     case ConsumableType.Stamina:
                         playerCondition.Statmina(consumable.value);         // 스태미나회복
+                        break;
+                    case ConsumableType.Jump:                               // 점프력 증가
+                        playerCondition.ApplyJumpBoost(consumable.value, 10f);
+                        break;
+                    case ConsumableType.Speed:                              // 스피드 증가
+                        playerCondition.ApplySpeedBoost(consumable.value, 10f);
                         break;
                 }
             }

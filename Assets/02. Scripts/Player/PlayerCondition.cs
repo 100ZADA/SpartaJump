@@ -19,6 +19,25 @@ public class PlayerCondition : MonoBehaviour, ISObject
 
     public event Action OnTakeDamage;               // 데미지 받을 시 호출
 
+    // PlayerController를 참조하여 증가 관련 변수 작성
+    private PlayerController playerController;
+    private float jumpBoostAmount;
+    private float speedBoostAmount;
+    private float originalMoveSpeed;
+    private float originalJumpPower;
+
+    // playerController에서 받아와 초기화 진행
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+
+        if(playerController != null )
+        {
+            originalMoveSpeed = playerController.moveSpeed;
+            originalJumpPower = playerController.jumpPower;
+        }
+    }
+
     void Update()
     {
         stamina.Add(stamina.passiveValue * Time.deltaTime);
@@ -98,5 +117,37 @@ public class PlayerCondition : MonoBehaviour, ISObject
         {
             rb.AddForce(force, ForceMode.Force);
         }
+    }
+
+    // 점프력 증가 효과 적용
+    public void ApplyJumpBoost(float amount, float duration)
+    {
+        jumpBoostAmount = amount;
+        playerController.jumpPower = originalJumpPower + jumpBoostAmount;
+        StartCoroutine(RemoveJumpBoost(duration));
+    }
+
+    // 점프력 증가 효과 제거
+    private IEnumerator RemoveJumpBoost(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        jumpBoostAmount = 0f;
+        playerController.jumpPower = originalJumpPower;
+    }
+
+    // 스피드 증가 효과 적용
+    public void ApplySpeedBoost(float amount, float duration)
+    {
+        speedBoostAmount = amount;
+        playerController.moveSpeed = originalMoveSpeed + speedBoostAmount;
+        StartCoroutine(RemoveSpeedBoost(duration));
+    }
+
+    // 스피드 증가 효과 제거
+    private IEnumerator RemoveSpeedBoost(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        speedBoostAmount = 0f;
+        playerController.moveSpeed = originalMoveSpeed;
     }
 }

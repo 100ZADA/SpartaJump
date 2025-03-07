@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageStool : MonoBehaviour
+public class DamageObject : MonoBehaviour
 {
     public int damage;              // 데미지
     public float damageRate;        // 피해 딜레이
 
-    public List<IDamgealbe> things = new List<IDamgealbe>();
+    public List<ISObject> things = new List<ISObject>();
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class DamageStool : MonoBehaviour
     // 만약 트리거에서 접근하게 되면
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out IDamgealbe damgealbe))
+        if(other.TryGetComponent(out ISObject damgealbe))
         {
             things.Add(damgealbe);
         }
@@ -34,7 +34,7 @@ public class DamageStool : MonoBehaviour
     // 만약 트리거에서 벗어나게 되면
     private void OnTriggerExit(Collider other)
     {
-        if(other.TryGetComponent(out IDamgealbe damagealbe))
+        if(other.TryGetComponent(out ISObject damagealbe))
         {
             things.Remove(damagealbe);
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uC218\uBC15"
   info: "\uB2F9\uB3C4 \uB192\uC740 \uC218\uBC15\uC774\uB2E4. \uC2A4\uD0DC\uBBF8\uB098\uB97C
-    \uB9CE\uC774 \uD68C\uBCF5\uD55C\uB2E4."
+    \uB9CE\uC774 \uD68C\uBCF5\uD55C\uB2E4. SP + 15"
   type: 0
   icon: {fileID: 0}
   consumables:

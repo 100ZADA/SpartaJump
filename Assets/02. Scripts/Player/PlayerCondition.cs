@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamgealbe
+public interface ISObject
 {
     void TakePhysicalDamage(int damageAmount);
+    void TakePhysicalJump(int jumpAmount);
+    void TakePhysicalPush(int pushAmount);
 }
 
-public class PlayerCondition : MonoBehaviour, IDamgealbe
+public class PlayerCondition : MonoBehaviour, ISObject
 {
     public UICondition uiCondition;
 
@@ -72,5 +74,29 @@ public class PlayerCondition : MonoBehaviour, IDamgealbe
     {
         health.Decrease(damageAmount);
         OnTakeDamage?.Invoke();
+    }
+
+    // 점프 받을시 행동
+    public void TakePhysicalJump(int jumpAmount)
+    {
+        Vector3 force = new Vector3(0, jumpAmount, 0);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
+        if (rb != null)
+        {
+            rb.AddForce(force, ForceMode.Impulse);
+        }
+    }
+
+    // 밀릴시 행동
+    public void TakePhysicalPush(int pushAmount)
+    {
+        Vector3 force = -transform.forward * pushAmount;         // 반대방향으로 힘을 작용
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.AddForce(force, ForceMode.Force);
+        }
     }
 }

@@ -13,19 +13,31 @@ public class AnimationController : MonoBehaviour
     }
     void Update()
     {
-        animator.SetBool("IsMove", false);
+        animator.SetBool("Move", false);
+        animator.SetBool("Left", false);
+        animator.SetBool("Right", false);
+        animator.SetBool("Back", false);
+        animator.ResetTrigger("Jump");
 
         if (Input.GetKey(KeyCode.A))
         {
-            animator.SetBool("IsMove", true);
+            animator.SetBool("Left", true);
         }
-        if(Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
-            animator.SetBool("IsMove", true);
+            animator.SetBool("Move", true);
         }
-        if (Input.GetKey(KeyCode.S))
+        else if(Input.GetKey(KeyCode.D))
         {
-            animator.SetBool("IsMove", true);
+            animator.SetBool("Right", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("Back", true);
+        }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            animator.SetTrigger("Jump");
         }
     }
 }

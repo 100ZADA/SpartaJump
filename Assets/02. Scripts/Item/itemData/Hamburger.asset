@@ -15,11 +15,10 @@ MonoBehaviour:
   displayName: "\uD584\uBC84\uAC70"
   info: "\uCE58\uC988 \uBC84\uAC70\uB2E4. \uBA39\uC73C\uBA74 \uCCB4\uB825\uC774 \uB9CE\uC774
     \uD68C\uBCF5\uB418\uC9C0\uB9CC \uC2A4\uD0DC\uBBF8\uB098\uAC00 \uAC10\uC18C\uB41C\uB2E4.
-    HP + 15 SP - 7"
+    HP + 25 SP - 15"
   type: 0
-  icon: {fileID: 0}
   consumables:
   - type: 0
-    value: 15
+    value: 25
   - type: 1
-    value: -7
+    value: -15

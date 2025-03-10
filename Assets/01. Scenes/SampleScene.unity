@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d21c647048b224082e9079efac4099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 30
 --- !u!1 &430709670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,10 +4637,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 430709671}
+  - {fileID: 1614983504}
   - {fileID: 1866636626}
   - {fileID: 561965669}
   - {fileID: 81372915}
-  - {fileID: 1614983504}
   - {fileID: 4456326096408689712}
   - {fileID: 1928389459867559766}
   - {fileID: 7534776498069322583}

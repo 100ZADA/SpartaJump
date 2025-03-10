@@ -8,6 +8,7 @@ public interface ISObject
     void TakePhysicalDamage(int damageAmount);
     void TakePhysicalJump(int jumpAmount);
     void TakePhysicalPush(int pushAmount);
+    void TakePhysicalFloor(int floorAmount);
 }
 
 public class PlayerCondition : MonoBehaviour, ISObject
@@ -18,6 +19,8 @@ public class PlayerCondition : MonoBehaviour, ISObject
     Condition stamina { get { return uiCondition.stamina; } }
 
     public event Action OnTakeDamage;               // 데미지 받을 시 호출
+
+    private Vector3 startPosition;                  // 시작 위치 저장
 
     // PlayerController를 참조하여 증가 관련 변수 작성
     private PlayerController playerController;
@@ -36,6 +39,8 @@ public class PlayerCondition : MonoBehaviour, ISObject
             originalMoveSpeed = playerController.moveSpeed;
             originalJumpPower = playerController.jumpPower;
         }
+
+        startPosition = transform.position;             // 시작 위치 저장
     }
 
     void Update()
@@ -149,5 +154,13 @@ public class PlayerCondition : MonoBehaviour, ISObject
         yield return new WaitForSeconds(duration);
         speedBoostAmount = 0f;
         playerController.moveSpeed = originalMoveSpeed;
+    }
+
+    // 충돌시 행동
+    public void TakePhysicalFloor(int floorAmount)
+    {
+        health.Decrease(floorAmount);           // 데미지 적용
+        transform.position = startPosition;     // 시작 위치로 복원
+        OnTakeDamage?.Invoke();
     }
 }

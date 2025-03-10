@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7130627780063640604}
   - component: {fileID: 3525389345270408735}
   - component: {fileID: 2978025207294362191}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Olive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6970460860091838363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.554, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3604488526608576995}
   - component: {fileID: 1827743972037098817}
   - component: {fileID: 7962997793051116247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Olive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,8 +139,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.26156926, y: 0.20181167, z: 0.19327545}
-  m_Center: {x: 0.5527561, y: 0.09603864, z: 0.0021343231}
+  m_Size: {x: 0.2379539, y: 0.20181167, z: 0.19327545}
+  m_Center: {x: -0.0028978586, y: 0.09603864, z: 0.0021343231}
 --- !u!54 &1827743972037098817
 Rigidbody:
   m_ObjectHideFlags: 0

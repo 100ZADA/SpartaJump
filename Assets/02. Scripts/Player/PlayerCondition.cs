@@ -108,7 +108,8 @@ public class PlayerCondition : MonoBehaviour, ISObject
         
         if (rb != null)
         {
-            rb.AddForce(force, ForceMode.Impulse);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);         // y축 속도 초기화
+            rb.AddForce(force, ForceMode.VelocityChange);
         }
     }
 
@@ -120,7 +121,8 @@ public class PlayerCondition : MonoBehaviour, ISObject
 
         if (rb != null)
         {
-            rb.AddForce(force, ForceMode.Force);
+            rb.velocity = new Vector3(0, 0, 0);                 // 속도 초기화
+            rb.AddForce(force, ForceMode.VelocityChange);
         }
     }
 

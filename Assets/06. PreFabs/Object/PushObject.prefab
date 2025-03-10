@@ -118,5 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ab355eb8544254b806f8983f92f942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushPower: 50000
-  pushInterval: 0.1
+  pushPower: 110

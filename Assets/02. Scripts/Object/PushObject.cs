@@ -1,17 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PushStool : MonoBehaviour
 {
-    public int pushPower;              // ¹Ğ¸®´Â Èû
-    public float pushInterval;         // È£Ãâ °£°İ
+    public int pushPower;              // ë°€ë¦¬ëŠ” í˜
 
     public List<ISObject> things = new List<ISObject>();
 
     void Start()
     {
-        InvokeRepeating("PushPower", 0, pushInterval);
+        InvokeRepeating("PushPower", 0, 0.1f);
     }
 
     void PushPower()
@@ -22,7 +21,7 @@ public class PushStool : MonoBehaviour
         }
     }
 
-    // ¸¸¾à Æ®¸®°Å¿¡¼­ Á¢±ÙÇÏ°Ô µÇ¸é
+    // ë§Œì•½ íŠ¸ë¦¬ê±°ì—ì„œ ì ‘ê·¼í•˜ê²Œ ë˜ë©´
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out ISObject pushAmount))
@@ -31,7 +30,7 @@ public class PushStool : MonoBehaviour
         }
     }
 
-    // ¸¸¾à Æ®¸®°Å¿¡¼­ ¹ş¾î³ª°Ô µÇ¸é
+    // ë§Œì•½ íŠ¸ë¦¬ê±°ì—ì„œ ë²—ì–´ë‚˜ê²Œ ë˜ë©´
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out ISObject pushAmount))

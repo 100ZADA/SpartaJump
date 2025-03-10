@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uC62C\uB9AC\uBE0C"
   info: "\uC62C\uB9AC\uBE0C\uB2E4. \uBA39\uC73C\uBA74 \uC810\uD504\uB825\uC774 \uC7A0\uAE50\uB3D9\uC548
-    \uC0C1\uC2B9\uD55C\uB2E4. 60\uCD08 \uB3D9\uC548 Jump + 30"
+    \uC0C1\uC2B9\uD55C\uB2E4. 30\uCD08 \uB3D9\uC548 Jump + 30"
   type: 0
   consumables:
   - type: 2

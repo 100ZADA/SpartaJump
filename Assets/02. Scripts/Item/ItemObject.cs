@@ -47,10 +47,10 @@ public class ItemObject : MonoBehaviour, IInteractable
                         playerCondition.Statmina(consumable.value);         // 스태미나회복
                         break;
                     case ConsumableType.Jump:                               // 점프력 증가
-                        playerCondition.ApplyJumpBoost(consumable.value, 60f);
+                        playerCondition.ApplyJumpBoost(consumable.value, 30f);
                         break;
                     case ConsumableType.Speed:                              // 스피드 증가
-                        playerCondition.ApplySpeedBoost(consumable.value, 60);
+                        playerCondition.ApplySpeedBoost(consumable.value, 30);
                         break;
                 }
             }

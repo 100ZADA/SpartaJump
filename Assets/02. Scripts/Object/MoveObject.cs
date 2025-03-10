@@ -5,40 +5,18 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    public float distance;
+    public float startPoint;
     public float turningPoint;
     public float moveSpeed;
 
-    float initPositionX;
-    float initPositionY;
-    float initPositionZ;
-
     bool turnSwitch;
-
-    private void Awake()
-    {
-        if(gameObject.name == "XMoveObject")            //  X축 이동
-        {
-            initPositionX = transform.position.x;
-        }
-
-        if(gameObject.name == "YMoveObject")            // Y축 이동
-        {
-            initPositionY = transform.position.y;
-        }
-
-        if (gameObject.name == "ZMoveObject")            //  Z축 이동
-        {
-            initPositionZ = transform.position.x;
-        }
-    }
 
     // X축 이동 조정
     void PositionX()
     {
         float currentPositionX = transform.position.x;
 
-        if(currentPositionX >= initPositionX)
+        if(currentPositionX >= startPoint)
         {
             turnSwitch = false;
         }
@@ -62,7 +40,7 @@ public class MoveObject : MonoBehaviour
     {
         float currentPositionY = transform.position.y;
 
-        if(currentPositionY >= initPositionY)
+        if(currentPositionY >= startPoint)
         {
             turnSwitch = false;
         }
@@ -86,7 +64,7 @@ public class MoveObject : MonoBehaviour
     {
         float currentPositionZ = transform.position.z;
 
-        if (currentPositionZ >= initPositionZ)
+        if (currentPositionZ >= startPoint)
         {
             turnSwitch = false;
         }

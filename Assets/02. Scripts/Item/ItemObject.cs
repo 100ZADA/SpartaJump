@@ -11,6 +11,18 @@ public interface IInteractable
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemData data;
+    public float respawnTime;               // 리스폰 시간 설정
+
+    private Vector3 firstposition;          // 처음 위치 저장용
+    private Quaternion firstrotation;       // 처음 회전 저장용
+
+    void Start()
+    {
+        // 초기 위치와 회전값 저장
+        firstposition = transform.position;
+        firstrotation = transform.rotation;
+
+    }
 
     public string GetInteractPrompt()
     {
@@ -46,6 +58,13 @@ public class ItemObject : MonoBehaviour, IInteractable
 
         CharacterManager.Instance.Player.itemData = data;
 
-        Destroy(gameObject);                // 아이템 사용후 필드에서 사라짐
+        // Destory로 소멸하지 않고 비활성화 진행
+        RespawnManager.instance.RespawnItem(this, respawnTime);
+    }
+
+    public void ResetItme()
+    {
+        transform.position = firstposition;
+        transform.rotation = firstrotation;
     }
 }

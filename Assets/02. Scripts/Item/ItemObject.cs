@@ -46,11 +46,11 @@ public class ItemObject : MonoBehaviour, IInteractable
                     case ConsumableType.Stamina:
                         playerCondition.Statmina(consumable.value);         // 스태미나회복
                         break;
-                    case ConsumableType.Jump:                               // 점프력 증가
-                        playerCondition.ApplyJumpBoost(consumable.value, 30f);
+                    case ConsumableType.Jump:                             
+                        playerCondition.ApplyJumpBoost(consumable.value, 30f); // 점프력 증가
                         break;
-                    case ConsumableType.Speed:                              // 스피드 증가
-                        playerCondition.ApplySpeedBoost(consumable.value, 30);
+                    case ConsumableType.Speed:                           
+                        playerCondition.ApplySpeedBoost(consumable.value, 30);  // 스피드 증가
                         break;
                 }
             }
@@ -62,6 +62,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         RespawnManager.instance.RespawnItem(this, respawnTime);
     }
 
+    // 초기값으로 불러옴
     public void ResetItme()
     {
         transform.position = firstposition;

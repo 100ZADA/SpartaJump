@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,7 +24,7 @@ public class CrashFloor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Ãæµ¹½Ã µ¥¹ÌÁö ¹Ş°í ¿ø·¡ Àå¼Ò·Î µ¹¾Æ¿À±â
+        // ì¶©ëŒì‹œ ë°ë¯¸ì§€ ë°›ê³  ì›ë˜ ì¥ì†Œë¡œ ëŒì•„ì˜¤ê¸°
         ISObject isObject = other.GetComponent<ISObject>();
 
         if (isObject != null)

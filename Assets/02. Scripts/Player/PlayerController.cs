@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    // 모든 동작 실행 후 실행
+    // 모든 동작 진행 후 실행
     private void LateUpdate()
     {
         if (canLook)
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnLookInput(InputAction.CallbackContext context)
     {
-        mouseDelta = context.ReadValue<Vector2>();
+        mouseDelta = context.ReadValue<Vector2>();                       // 마우스 커서에 따라 시점 이동
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)

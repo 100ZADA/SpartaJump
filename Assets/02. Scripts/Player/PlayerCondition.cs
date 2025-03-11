@@ -71,6 +71,7 @@ public class PlayerCondition : MonoBehaviour, ISObject
         GameEnd();
     }
 
+    // 게임 종료 조건
     public void GameEnd()
     {
 #if UNITY_EDITOR
@@ -79,7 +80,6 @@ public class PlayerCondition : MonoBehaviour, ISObject
         Application.Quit();
 #endif
     }
-
 
     // 스테미나 사용
     public bool UseStamina(float amount)
@@ -131,6 +131,7 @@ public class PlayerCondition : MonoBehaviour, ISObject
     {
         jumpBoostAmount = amount;
         playerController.jumpPower = originalJumpPower + jumpBoostAmount;
+
         StartCoroutine(RemoveJumpBoost(duration));
     }
 
@@ -138,6 +139,7 @@ public class PlayerCondition : MonoBehaviour, ISObject
     private IEnumerator RemoveJumpBoost(float duration)
     {
         yield return new WaitForSeconds(duration);
+
         jumpBoostAmount = 0f;
         playerController.jumpPower = originalJumpPower;
     }
@@ -147,6 +149,7 @@ public class PlayerCondition : MonoBehaviour, ISObject
     {
         speedBoostAmount = amount;
         playerController.moveSpeed = originalMoveSpeed + speedBoostAmount;
+
         StartCoroutine(RemoveSpeedBoost(duration));
     }
 
@@ -154,6 +157,7 @@ public class PlayerCondition : MonoBehaviour, ISObject
     private IEnumerator RemoveSpeedBoost(float duration)
     {
         yield return new WaitForSeconds(duration);
+
         speedBoostAmount = 0f;
         playerController.moveSpeed = originalMoveSpeed;
     }

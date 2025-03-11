@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
-    public float checkRate = 0.05f;         // 감지 범위
+    public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
-    public LayerMask layerMask;             // 
+    public LayerMask layerMask;
 
     public GameObject curInteractGameObject;
     private IInteractable curInteractable;
@@ -49,6 +49,7 @@ public class Interaction : MonoBehaviour
         }
     }
 
+    // 아이템 설명 텍스트
     private void SetPromptText()
     {
         promptText.gameObject.SetActive(true);

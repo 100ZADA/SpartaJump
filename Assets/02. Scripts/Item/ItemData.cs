@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// 아이템 타입
 public enum ItemType
 {
     Consumable
 }
 
+// 회복 타입
 public enum ConsumableType
 {
     Health,
@@ -23,6 +25,7 @@ public class ItemDataConsumable
     public float value;
 }
 
+// 아이템 스크랩트오브젝트화
 [CreateAssetMenu(fileName = "Food", menuName = "New Item")]
 public class ItemData : ScriptableObject
 {

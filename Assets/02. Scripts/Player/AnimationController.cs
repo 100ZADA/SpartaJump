@@ -11,6 +11,8 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
 
     }
+
+    // 캐릭터 이동
     void Update()
     {
         animator.SetBool("Move", false);

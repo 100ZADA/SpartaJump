@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    public float startPoint;
-    public float turningPoint;
-    public float moveSpeed;
+    public float startPoint;                // 시작점
+    public float turningPoint;              // 반환점
+    public float moveSpeed;                 // 이동 속도
 
     bool turnSwitch;
 
@@ -89,13 +89,11 @@ public class MoveObject : MonoBehaviour
         {
             PositionY();
         }
-
-        if (gameObject.name == "XMoveObject")
+        else if (gameObject.name == "XMoveObject")
         {
             PositionX();
         }
-
-        if (gameObject.name == "ZMoveObject")
+        else if (gameObject.name == "ZMoveObject")
         {
             PositionZ();
         }

@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class JumpObject : MonoBehaviour
 {
-    public int jumpPower;           // ³¯¾Æ°¡´Â Èû
+    public int jumpPower;           // ë‚ ì•„ê°€ëŠ” í˜
 
     public List<ISObject> things = new List<ISObject>();
 
@@ -21,7 +21,7 @@ public class JumpObject : MonoBehaviour
         }
     }
 
-    // ¸¸¾à Æ®¸®°Å¿¡¼­ Á¢±ÙÇÏ°Ô µÇ¸é
+    // ë§Œì•½ íŠ¸ë¦¬ê±°ì—ì„œ ì ‘ê·¼í•˜ê²Œ ë˜ë©´
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out ISObject jumpAmount))
@@ -30,7 +30,7 @@ public class JumpObject : MonoBehaviour
         }
     }
 
-    // ¸¸¾à Æ®¸®°Å¿¡¼­ ¹ş¾î³ª°Ô µÇ¸é
+    // ë§Œì•½ íŠ¸ë¦¬ê±°ì—ì„œ ë²—ì–´ë‚˜ê²Œ ë˜ë©´
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out ISObject jumpAmount))

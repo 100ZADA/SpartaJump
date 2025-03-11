@@ -21,13 +21,13 @@ public class Condition : MonoBehaviour
         uiBar.fillAmount = GetPercentage();
     }
 
-    // 증가
+    // 수치 증가
     public void Add(float amount)
     {
         curValue = Mathf.Min(curValue + amount, maxValue);
     }
 
-    // 감소
+    // 수치 감소
     public void Decrease(float amount)
     {
         curValue = Mathf.Max(curValue - amount, 0.0f);
